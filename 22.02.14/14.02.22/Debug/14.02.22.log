@@ -1,0 +1,11 @@
+﻿  14.02.22.cpp
+C:\Users\Nik\source\repos\14.02.22\14.02.22\arr.h(58,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\14.02.22\14.02.22\arr.h(55): message : во время компиляции функции-члена класс шаблон "void Arr<int>::resize(size_t)"
+C:\Users\Nik\source\repos\14.02.22\14.02.22\14.02.22.cpp(9): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Arr<int>::resize(size_t)"
+C:\Users\Nik\source\repos\14.02.22\14.02.22\14.02.22.cpp(8): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "Arr<int>"
+C:\Users\Nik\source\repos\14.02.22\14.02.22\arr.h(63,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\14.02.22\14.02.22\arr.h(37,30): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Nik\source\repos\14.02.22\14.02.22\arr.h(34): message : во время компиляции функции-члена класс шаблон "void Arr<int>::printAll(void) const"
+C:\Users\Nik\source\repos\14.02.22\14.02.22\14.02.22.cpp(13): message : выполняется компиляция ссылки на экземпляр шаблон функции "void Arr<int>::printAll(void) const"
+C:\Users\Nik\source\repos\14.02.22\14.02.22\arr.h(91): warning C4172: возвращение адреса локальной или временной переменной : elem
+  14.02.22.vcxproj -> C:\Users\Nik\source\repos\14.02.22\Debug\14.02.22.exe
