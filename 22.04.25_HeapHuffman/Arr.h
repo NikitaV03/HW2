@@ -1,4 +1,6 @@
 #pragma once
+#include <utility>
+
 template <typename T>
 class Arr {
     T* data_;
@@ -17,17 +19,17 @@ public:
         size_ = A.size_;
         max_size_ = A.max_size_;
         data_ = new T[max_size_];
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < size_; ++i) {
             data_[i] = A.data_[i];
         }
     }
     Arr(Arr&& A) {
         data_ = A.data_;
-        size_ = A.size;
+        size_ = A.size_;
         max_size_ = A.max_size_;
         isSorted_ = A.isSorted_;
         A.data_ = 0;
-        A.size = 0;
+        A.size_ = 0;
         A.max_size_ = 0;
     }
     ~Arr() {
@@ -71,7 +73,7 @@ public:
             ++current_;
             return iterator(tmp);
         }
-        friend class MyArray;
+        friend class Arr;
     };
     iterator begin() const { return iterator(data_); }
     iterator end() const { return iterator(data_ + size_); }
@@ -94,6 +96,7 @@ public:
             --current_;
             return iterator(tmp);
         }
+        friend class Arr;
     };
     reverse_iterator rbegin() const { return reverse_iterator(data_ + size_ - 1); }
     reverse_iterator rend() const { return reverse_iterator(data_ - 1); }
@@ -155,7 +158,7 @@ Arr<T>& Arr<T>::operator=(const Arr<T>& A) {
         size_ = A.size_;
         max_size_ = A.max_size_;
         data_ = new T[max_size_];
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < size_; ++i) {
             data_[i] = A.data_[i];
         }
     }
@@ -184,8 +187,9 @@ void Arr<T>::push_back(const T& x) {
         T* tmp = new T[newsize];
         if (!tmp) throw "Out of memory";
         for (unsigned int i = 0; i < max_size_; ++i)
-            tmp[i] = std::move(data_[i]);
-        delete[] data_;
+            tmp[i] = data_[i];
+            //tmp[i] = std::move(data_[i]);
+        //delete[] data_;
         data_ = tmp;
         max_size_ = newsize;
     }
